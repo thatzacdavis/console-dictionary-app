@@ -102,6 +102,7 @@ namespace console_dictionary_app
             _dictionary = new Dictionary<string, List<string>>();
         }
 
+        // Tells the user if a key exists or not.
         public static void KeyExists(string key) 
         {
             if (_dictionary.ContainsKey(key))
@@ -114,6 +115,8 @@ namespace console_dictionary_app
             }
         }
 
+        // Tells the user whether a member exists or if the requested key
+        // or member does not.
         public static void MemberExists(string key, string member) 
         {
             if (_dictionary.ContainsKey(key))
