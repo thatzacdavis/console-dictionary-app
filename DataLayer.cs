@@ -29,7 +29,7 @@ namespace console_dictionary_app
             Dictionary<string, List<string>>.KeyCollection keys = _dictionary.Keys;
             if (keys.Count > 0)
             {
-                foreach (var key in keys)
+                foreach (string key in keys)
                 {
                     Console.WriteLine(key);
                 }
