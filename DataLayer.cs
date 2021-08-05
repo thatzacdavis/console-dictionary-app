@@ -37,13 +37,10 @@ namespace console_dictionary_app
         {
             if(_dictionary.ContainsKey(key)) 
             {
-                var items = _dictionary.First(item => item.Key == key);
-                foreach (var item in items)
+                var keyValuePair = _dictionary.First(item => item.Key == key);
+                foreach (var keyValuePair in item.Value) 
                 {
-                    foreach (var subItem in item.Value) 
-                    {
-                        Console.WriteLine(subItem);
-                    }
+                    Console.WriteLine(subItem);
                 }
             }
             else 
