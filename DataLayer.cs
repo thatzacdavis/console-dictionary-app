@@ -46,8 +46,8 @@ namespace console_dictionary_app
         {
             if (_dictionary.ContainsKey(key))
             {
-                var keyValuePair = _dictionary.First(item => item.Key == key);
-                foreach (var keyValuePair in item.Value)
+                KeyValuePair<string, List<string>> keyValuePair = _dictionary.First(item => item.Key == key);
+                foreach (string subItem in item.Value)
                 {
                     Console.WriteLine(subItem);
                 }
