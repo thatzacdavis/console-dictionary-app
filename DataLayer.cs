@@ -169,5 +169,24 @@ namespace ConsoleDictionaryApp
                 }
             }
         }
+
+        public static void GetCommonMembersForKeys(string key1, string key2)
+        {
+            // TODO: Validate the keys exist.
+
+            List<string> membersForKey1 = _dictionary.First(kvp => kvp.Key == key1).Value;
+            List<string> membersForKey2 = _dictionary.First(kvp => kvp.Key == key2).Value;
+
+            List<string> commonMembers = new List<string>();
+
+            foreach(string member in membersForKey1)
+            {
+                if (membersForKey2.Any(memberForKey2 => memberForKey2 == member))
+                {
+                    //commonMembers.Add(member);
+                    Console.WriteLine($"Common Member: {member}");
+                }
+            }
+        }
     }
 }

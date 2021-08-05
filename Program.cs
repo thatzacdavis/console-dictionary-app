@@ -73,6 +73,11 @@ namespace ConsoleDictionaryApp
                     DataLayer.GetAllItems();
                     AcceptInput();
                     break;
+                case "COMMONMEMBERS":
+                    NotifyValidAction(inputs[0]);
+                    DataLayer.GetCommonMembersForKeys(inputs[1], inputs[2]);
+                    AcceptInput();
+                    break;
                 case "EXIT":
                     NotifyValidAction(inputs[0]);
                     Console.WriteLine("Exiting application...");
