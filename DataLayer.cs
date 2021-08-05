@@ -24,6 +24,7 @@ namespace console_dictionary_app
 
         }
 
+        // List all keys of the dictionary or informs the user there are none.
         public static void Keys()
         {
             Dictionary<string, List<string>>.KeyCollection keys = _dictionary.Keys;
@@ -40,6 +41,8 @@ namespace console_dictionary_app
             }
         }
 
+        // Lists all the member sof a given key, or informs the user that
+        // the key does not exist.
         public static void Members(string key)
         {
             if(_dictionary.ContainsKey(key)) 
@@ -56,6 +59,8 @@ namespace console_dictionary_app
             }
         }
 
+        // Removes a member for a key if they both exist.
+        // Otherwise informs the user if either the key or the member does not.
         public static void Remove(string key, string value)
         {
             if(_dictionary.ContainsKey(key)) 
