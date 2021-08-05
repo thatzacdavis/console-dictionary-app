@@ -95,5 +95,11 @@ namespace console_dictionary_app
                 Console.WriteLine($"Key {key} does not exist.");
             }
         }
+
+        // Clears the entire dictionary by overwriting it.
+        public static void Clear()
+        {
+            _dictionary = new Dictionary<string, List<string>>();
+        }
     }
 }
