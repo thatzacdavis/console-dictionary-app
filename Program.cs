@@ -38,6 +38,11 @@ namespace console_dictionary_app
                     DataLayer.Members(inputs[1]);
                     AcceptInput();
                     break;
+                case "REMOVE":
+                    NotifyValidAction(inputs[0]);
+                    DataLayer.Remove(inputs[1], inputs[2]);
+                    AcceptInput();
+                    break;
                 case "EXIT":
                     NotifyValidAction(inputs[0]);
                     Console.WriteLine("Exiting application...");

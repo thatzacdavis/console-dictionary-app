@@ -40,7 +40,7 @@ namespace console_dictionary_app
                 var items = _dictionary.First(item => item.Key == key);
                 foreach (var item in items)
                 {
-                    foreach(var subItem in item.Value) 
+                    foreach (var subItem in item.Value) 
                     {
                         Console.WriteLine(subItem);
                     }
@@ -50,7 +50,28 @@ namespace console_dictionary_app
             {
                 Console.WriteLine($"ERROR, key {key} does not exist.");
             }
-            
+        }
+
+        public static void Remove(string key, string value)
+        {
+            if(_dictionary.ContainsKey(key)) 
+            {
+                var keyValuePair = _dictionary.First(item => item.Key == key);
+                var subItem = keyValuePair.Value.FirstOrDefault(member => member == value);
+                if (subItem) 
+                {
+                    keyValuePair.Value.Remove(value);
+                    Console.WriteLine($"Removed {value} from {key}.");
+                }
+                else
+                {
+                    Console.WriteLine($"ERROR, member {member} does not exist for key {key}.");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"ERROR, key {key} does not exist.");
+            }
         }
     }
 }
