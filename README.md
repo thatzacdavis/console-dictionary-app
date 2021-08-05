@@ -12,6 +12,7 @@ This is a sample console application that modifies a dictionary built using [.NE
 
 ## Running Unit Tests
 
+1. `cd DataLayer.Tests`
 1. `dotnet test`
 
 ## Available Commands
