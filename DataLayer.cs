@@ -10,7 +10,7 @@ namespace console_dictionary_app
 
         // Adds a member to the list of strings for an existing key,
         // or creates a new entry in the dictionary if the key does not exist.
-        public static void Add(string key, string value)
+        public static void AddMemberByKey(string key, string value)
         {
             if (!_dictionary.ContainsKey(key))
             {
@@ -24,7 +24,7 @@ namespace console_dictionary_app
         }
 
         // List all keys of the dictionary or informs the user there are none.
-        public static void Keys()
+        public static void GetAllKeys()
         {
             Dictionary<string, List<string>>.KeyCollection keys = _dictionary.Keys;
             if (keys.Count > 0)
@@ -42,7 +42,7 @@ namespace console_dictionary_app
 
         // Lists all the member sof a given key, or informs the user that
         // the key does not exist.
-        public static void Members(string key)
+        public static void GetAllMembersByKey(string key)
         {
             if (_dictionary.ContainsKey(key))
             {
@@ -60,7 +60,7 @@ namespace console_dictionary_app
 
         // Removes a member for a key if they both exist.
         // Otherwise informs the user if either the key or the member does not.
-        public static void Remove(string key, string value)
+        public static void RemoveMemberByKey(string key, string value)
         {
             if (_dictionary.ContainsKey(key))
             {
@@ -84,7 +84,7 @@ namespace console_dictionary_app
 
         // Removes a KeyValuePair from the dictionary by key if it exists.
         // Otherwise informs the user that it does not exit.
-        public static void RemoveAll(string key)
+        public static void RemoveKey(string key)
         {
             if (_dictionary.ContainsKey(key))
             {
@@ -97,7 +97,7 @@ namespace console_dictionary_app
         }
 
         // Clears the entire dictionary by overwriting it.
-        public static void Clear()
+        public static void ClearDictionary()
         {
             _dictionary = new Dictionary<string, List<string>>();
         }
@@ -139,7 +139,7 @@ namespace console_dictionary_app
 
         // Returns all the members of a given key,
         // or informs the user that the key does not exist.
-        public static void AllMembers(string key)
+        public static void GetAllMembers(string key)
         {
             if (_dictionary.ContainsKey(key))
             {
@@ -156,7 +156,7 @@ namespace console_dictionary_app
         }
 
         // Prints out all keys and all members of each key.
-        public static void Items()
+        public static void GetAllItems()
         {
             if (_dictionary.Count > 0)
             {

@@ -25,32 +25,32 @@ namespace console_dictionary_app
             {
                 case "ADD":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Add(inputs[1], inputs[2]);
+                    DataLayer.AddMemberByKey(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
                 case "KEYS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Keys();
+                    DataLayer.GetAllKeys();
                     AcceptInput();
                     break;
                 case "MEMBERS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Members(inputs[1]);
+                    DataLayer.GetAllMembersByKey(inputs[1]);
                     AcceptInput();
                     break;
                 case "REMOVE":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Remove(inputs[1], inputs[2]);
+                    DataLayer.RemoveMemberByKey(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
                 case "REMOVEALL":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.RemoveAll(inputs[1]);
+                    DataLayer.RemoveKey(inputs[1]);
                     AcceptInput();
                     break;
                 case "CLEAR":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Clear();
+                    DataLayer.ClearDictionary();
                     AcceptInput();
                     break;
                 case "KEYEXISTS":
@@ -65,12 +65,12 @@ namespace console_dictionary_app
                     break;
                 case "ALLMEMBERS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.AllMembers(inputs[1], inputs[2]);
+                    DataLayer.GetAllMembers(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
                 case "ITEMS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.Items();
+                    DataLayer.GetAllItems();
                     AcceptInput();
                     break;
                 case "EXIT":
