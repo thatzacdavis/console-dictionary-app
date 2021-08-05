@@ -60,7 +60,7 @@ namespace console_dictionary_app
                     break;
                 case "MEMBEREXISTS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.KeyExists(inputs[1], inputs[2]);
+                    DataLayer.MemberExists(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
                 case "EXIT":
