@@ -68,6 +68,11 @@ namespace console_dictionary_app
                     DataLayer.AllMembers(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
+                case "ITEMS":
+                    NotifyValidAction(inputs[0]);
+                    DataLayer.Items();
+                    AcceptInput();
+                    break;
                 case "EXIT":
                     NotifyValidAction(inputs[0]);
                     Console.WriteLine("Exiting application...");

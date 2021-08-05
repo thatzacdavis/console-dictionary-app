@@ -44,15 +44,15 @@ namespace console_dictionary_app
         // the key does not exist.
         public static void Members(string key)
         {
-            if(_dictionary.ContainsKey(key)) 
+            if (_dictionary.ContainsKey(key))
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
-                foreach (var keyValuePair in item.Value) 
+                foreach (var keyValuePair in item.Value)
                 {
                     Console.WriteLine(subItem);
                 }
             }
-            else 
+            else
             {
                 Console.WriteLine($"ERROR, key {key} does not exist.");
             }
@@ -62,11 +62,11 @@ namespace console_dictionary_app
         // Otherwise informs the user if either the key or the member does not.
         public static void Remove(string key, string value)
         {
-            if(_dictionary.ContainsKey(key)) 
+            if (_dictionary.ContainsKey(key))
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
                 var subItem = keyValuePair.Value.FirstOrDefault(member => member == value);
-                if (subItem) 
+                if (subItem)
                 {
                     keyValuePair.Value.Remove(value);
                     Console.WriteLine($"Removed {value} from {key}.");
@@ -81,7 +81,7 @@ namespace console_dictionary_app
                 Console.WriteLine($"ERROR, key {key} does not exist.");
             }
         }
-    
+
         // Removes a KeyValuePair from the dictionary by key if it exists.
         // Otherwise informs the user that it does not exit.
         public static void RemoveAll(string key)
@@ -103,7 +103,7 @@ namespace console_dictionary_app
         }
 
         // Tells the user if a key exists or not.
-        public static void KeyExists(string key) 
+        public static void KeyExists(string key)
         {
             if (_dictionary.ContainsKey(key))
             {
@@ -117,12 +117,12 @@ namespace console_dictionary_app
 
         // Tells the user whether a member exists or if the requested key
         // or member does not.
-        public static void MemberExists(string key, string member) 
+        public static void MemberExists(string key, string member)
         {
             if (_dictionary.ContainsKey(key))
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
-                if (keyValuePair.Value.Contains(value => value == member)) 
+                if (keyValuePair.Value.Contains(value => value == member))
                 {
                     Console.WriteLine($"Member {member} for key {key} does exist!");
                 }
@@ -137,12 +137,14 @@ namespace console_dictionary_app
             }
         }
 
+        // Returns all the members of a given key,
+        // or informs the user that the key does not exist.
         public static void AllMembers(string key)
         {
             if (_dictionary.ContainsKey(key))
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
-                foreach(string subItem in keyValuePair.Value)
+                foreach (string subItem in keyValuePair.Value)
                 {
                     Console.WriteLine($"{subItem}");
                 }
@@ -150,6 +152,21 @@ namespace console_dictionary_app
             else
             {
                 Console.WriteLine($"ERROR, key {key} does not exist.");
+            }
+        }
+
+        // Prints out all keys and all members of each key.
+        public static void Items()
+        {
+            if (_dictionary.Count > 0)
+            {
+                foreach(KeyValuePair<string, List<string>> keyValuePair in _dictionary)
+                {
+                    foreach(string subItem in keyValuePair.Value) 
+                    {
+                        Console.WriteLine($"{keyValuePair.Key}: {subItem}");
+                    }
+                }
             }
         }
     }
