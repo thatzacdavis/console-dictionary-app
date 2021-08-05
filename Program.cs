@@ -53,6 +53,11 @@ namespace console_dictionary_app
                     DataLayer.Clear();
                     AcceptInput();
                     break;
+                case "KEYEXISTS":
+                    NotifyValidAction(inputs[0]);
+                    DataLayer.KeyExists(inputs[1]);
+                    AcceptInput();
+                    break;
                 case "EXIT":
                     NotifyValidAction(inputs[0]);
                     Console.WriteLine("Exiting application...");

@@ -101,5 +101,17 @@ namespace console_dictionary_app
         {
             _dictionary = new Dictionary<string, List<string>>();
         }
+
+        public static void KeyExists(string key) 
+        {
+            if (_dictionary.ContainsKey(key))
+            {
+                Console.WriteLine($"The key {key} does exist!");
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, key {key} does not exist :(");
+            }
+        }
     }
 }
