@@ -73,7 +73,7 @@ namespace console_dictionary_app
                 }
                 else
                 {
-                    Console.WriteLine($"ERROR, member {member} does not exist for key {key}.");
+                    Console.WriteLine($"ERROR, member {value} does not exist for key {key}.");
                 }
             }
             else
