@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using console_dictionary_app;
+using ConsoleDictionaryApp;
 using System.Linq;
 
 namespace DataLayer.Tests
@@ -11,30 +11,30 @@ namespace DataLayer.Tests
         [Fact]
         public void AddsNewKeyWhenMemberAddedForNewKey()
         {
-            console_dictionary_app.DataLayer.ClearDictionary();
+            ConsoleDictionaryApp.DataLayer.ClearDictionary();
 
-            console_dictionary_app.DataLayer.AddMemberByKey("zac", "davis");
-            Assert.Single(console_dictionary_app.DataLayer._dictionary);
+            ConsoleDictionaryApp.DataLayer.AddMemberByKey("zac", "davis");
+            Assert.Single(ConsoleDictionaryApp.DataLayer._dictionary);
         }
 
         [Fact]
         public void AddsSuppliedKeyAndValue()
         {
-            console_dictionary_app.DataLayer.ClearDictionary();
+            ConsoleDictionaryApp.DataLayer.ClearDictionary();
 
-            console_dictionary_app.DataLayer.AddMemberByKey("zac", "davis");
-            Assert.Equal("zac", console_dictionary_app.DataLayer._dictionary.First().Key);
-            Assert.Equal("davis", console_dictionary_app.DataLayer._dictionary.First().Value.First());
+            ConsoleDictionaryApp.DataLayer.AddMemberByKey("zac", "davis");
+            Assert.Equal("zac", ConsoleDictionaryApp.DataLayer._dictionary.First().Key);
+            Assert.Equal("davis", ConsoleDictionaryApp.DataLayer._dictionary.First().Value.First());
         }
 
         [Fact]
         public void AddsSuppliedValueToExistingKey()
         {
-            console_dictionary_app.DataLayer.ClearDictionary();
+            ConsoleDictionaryApp.DataLayer.ClearDictionary();
 
-            console_dictionary_app.DataLayer.AddMemberByKey("zac", "davis");
-            console_dictionary_app.DataLayer.AddMemberByKey("zac", "davis2");
-            Assert.Equal("davis2", console_dictionary_app.DataLayer._dictionary.First().Value.ElementAt(1));
+            ConsoleDictionaryApp.DataLayer.AddMemberByKey("zac", "davis");
+            ConsoleDictionaryApp.DataLayer.AddMemberByKey("zac", "davis2");
+            Assert.Equal("davis2", ConsoleDictionaryApp.DataLayer._dictionary.First().Value.ElementAt(1));
         }
     }
 }

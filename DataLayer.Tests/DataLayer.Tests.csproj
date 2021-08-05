@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\console-dictionary-app.csproj" />
+    <ProjectReference Include="..\ConsoleDictionaryApp.csproj" />
   </ItemGroup>
 
 </Project>
