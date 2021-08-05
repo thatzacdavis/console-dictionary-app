@@ -136,5 +136,21 @@ namespace console_dictionary_app
                 Console.WriteLine($"ERROR, key {key} does not exist.");
             }
         }
+
+        public static void AllMembers(string key)
+        {
+            if (_dictionary.ContainsKey(key))
+            {
+                var keyValuePair = _dictionary.First(item => item.Key == key);
+                foreach(string subItem in keyValuePair.Value)
+                {
+                    Console.WriteLine($"{subItem}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"ERROR, key {key} does not exist.");
+            }
+        }
     }
 }
