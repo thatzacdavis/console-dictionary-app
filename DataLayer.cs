@@ -122,7 +122,7 @@ namespace console_dictionary_app
             if (_dictionary.ContainsKey(key))
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
-                if (keyValuePair.Value.Contains(value => value == member))
+                if (keyValuePair.Value.Any(value => value == member))
                 {
                     Console.WriteLine($"Member {member} for key {key} does exist!");
                 }
