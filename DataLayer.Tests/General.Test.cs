@@ -8,7 +8,7 @@ namespace DataLayer.Tests
         [Fact]
         public void InitializesWithZeroCountDictionary()
         {
-            Assert.Equal(console_dictionary_app.DataLayer._dictionary.Count, 0);
+            Assert.Equal(0, console_dictionary_app.DataLayer._dictionary.Count);
         }
     }
 }
