@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>console_dictionary_app</RootNamespace>
-    <StartupObject>console_dictionary_app.Program</StartupObject>
+    <RootNamespace>ConsoleDictionaryApp</RootNamespace>
+    <StartupObject>ConsoleDictionaryApp.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

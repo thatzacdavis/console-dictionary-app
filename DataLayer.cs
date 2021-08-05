@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 
-namespace console_dictionary_app
+namespace ConsoleDictionaryApp
 {
     public class DataLayer
     {
@@ -160,9 +160,9 @@ namespace console_dictionary_app
         {
             if (_dictionary.Count > 0)
             {
-                foreach(KeyValuePair<string, List<string>> keyValuePair in _dictionary)
+                foreach (KeyValuePair<string, List<string>> keyValuePair in _dictionary)
                 {
-                    foreach(string subItem in keyValuePair.Value) 
+                    foreach (string subItem in keyValuePair.Value)
                     {
                         Console.WriteLine($"{keyValuePair.Key}: {subItem}");
                     }

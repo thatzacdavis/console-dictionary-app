@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace console_dictionary_app
+namespace ConsoleDictionaryApp
 {
     class Program
     {
