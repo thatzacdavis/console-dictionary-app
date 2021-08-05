@@ -35,14 +35,22 @@ namespace console_dictionary_app
 
         public static void Members(string key)
         {
-            var items = _dictionary.Where(item => item.Key == key);
-            foreach (var item in items)
+            if(_dictionary.ContainsKey(key)) 
             {
-                foreach(var subItem in item.Value) 
+                var items = _dictionary.First(item => item.Key == key);
+                foreach (var item in items)
                 {
-                    Console.WriteLine(subItem);
+                    foreach(var subItem in item.Value) 
+                    {
+                        Console.WriteLine(subItem);
+                    }
                 }
             }
+            else 
+            {
+                Console.WriteLine($"ERROR, key {key} does not exist.");
+            }
+            
         }
     }
 }
