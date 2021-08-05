@@ -66,7 +66,7 @@ namespace console_dictionary_app
             {
                 var keyValuePair = _dictionary.First(item => item.Key == key);
                 var subItem = keyValuePair.Value.FirstOrDefault(member => member == value);
-                if (subItem)
+                if (subItem != null)
                 {
                     keyValuePair.Value.Remove(value);
                     Console.WriteLine($"Removed {value} from {key}.");
