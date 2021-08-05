@@ -27,9 +27,16 @@ namespace console_dictionary_app
         public static void Keys()
         {
             Dictionary<string, List<string>>.KeyCollection keys = _dictionary.Keys;
-            foreach (var key in keys)
+            if (keys.Count > 0)
             {
-                Console.WriteLine(key);
+                foreach (var key in keys)
+                {
+                    Console.WriteLine(key);
+                }
+            }
+            else
+            {
+                Console.WriteLine("There are no keys.");
             }
         }
 
