@@ -65,7 +65,7 @@ namespace console_dictionary_app
                     break;
                 case "ALLMEMBERS":
                     NotifyValidAction(inputs[0]);
-                    DataLayer.GetAllMembers(inputs[1], inputs[2]);
+                    DataLayer.GetAllMembers(inputs[1]);
                     AcceptInput();
                     break;
                 case "ITEMS":
