@@ -21,7 +21,6 @@ namespace console_dictionary_app
                 KeyValuePair<string, List<string>> keyValuePair = _dictionary.First(item => item.Key == key);
                 keyValuePair.Value.Add(value);
             }
-
         }
 
         // List all keys of the dictionary or informs the user there are none.
@@ -80,6 +79,20 @@ namespace console_dictionary_app
             else
             {
                 Console.WriteLine($"ERROR, key {key} does not exist.");
+            }
+        }
+    
+        // Removes a KeyValuePair from the dictionary by key if it exists.
+        // Otherwise informs the user that it does not exit.
+        public static void RemoveAll(string key)
+        {
+            if (_dictionary.ContainsKey(key))
+            {
+                _dictionary.Remove(key);
+            }
+            else
+            {
+                Console.WriteLine($"Key {key} does not exist.");
             }
         }
     }

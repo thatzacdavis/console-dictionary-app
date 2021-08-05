@@ -43,6 +43,11 @@ namespace console_dictionary_app
                     DataLayer.Remove(inputs[1], inputs[2]);
                     AcceptInput();
                     break;
+                case "REMOVEALL":
+                    NotifyValidAction(inputs[0]);
+                    DataLayer.RemoveAll(inputs[1]);
+                    AcceptInput();
+                    break;
                 case "EXIT":
                     NotifyValidAction(inputs[0]);
                     Console.WriteLine("Exiting application...");
